@@ -58,15 +58,31 @@
 
   <div class="container">
     <h1>Tasks...</h1>
-    <ul>
+    <ul id="lista">
       <li>Passear com cachorro2</li>
       <li>Lavar o carro</li>
       <li>Tomar caipirinha</li>
     </ul>
-    <input type="text">
-    <button>adicionar</button>
+    <input id="texto" type="text">
+    <button onclick="add()">adicionar</button>
   </div>
 
+  <script>
+    function add() {
+      // pegar a nova tarefa
+      const novaTarefa = document.getElementById("texto").value
+
+      // criar um novo elemento <li>
+      const li = document.createElement("li")
+
+      // colocar a nova tarefa dentro do novo <li>
+      li.innerText = novaTarefa
+
+      // adicionar o novo elemento <li> na <ul> existente
+      const ul = document.getElementById("lista")
+      ul.appendChild(li)
+    }
+  </script>
 </body>
 
 </html>
