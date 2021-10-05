@@ -57,7 +57,7 @@
 <body>
 
   <div class="container">
-    <h1>Tasks...</h1>
+    <h1><span id="total">0</span> Tasks...</h1>
     <ul id="lista">
       <li>Passear com cachorro2</li>
       <li>Lavar o carro</li>
@@ -84,7 +84,18 @@
 
       // limpar o input
       document.getElementById("texto").value = ""
+
+      // atualizar o total
+      updateTotal()
     }
+
+    function updateTotal() {
+      const ul = document.getElementById("lista")
+      const total = ul.childElementCount
+      document.getElementById("total").innerText = total
+    }
+
+    updateTotal()
   </script>
 </body>
 
